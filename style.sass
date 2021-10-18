@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap')
+
+//1. "Verified Graduate" has the same color as the person's name with 50%
+// opacity
+//2. Review paragraphs inside the quotations have the same color as well,
+// but are at 70% opacity
+
+$moderate-violet: hsl(263, 55%, 52%)
+$very-dark-grayish-blue: hsl(217, 19%, 35%)
+$very-dark-blackish-blue: hsl(219, 29%, 14%)
+$white: hsl(0, 0%, 100%)
+
+$light-gray: hsl(0, 0%, 81%)
+$light-grayish-blue: hsl(210, 46%, 95%)
+
+*,*::before,*::after
+    box-sizing: inherit
+
+body
+    box-sizing: border-box
+    font-family: 'Barlow Semi Condensed', sans-serif
+    font-size: 13px
+    min-height: 100vh
+    max-width: 1440px
+    margin: 0
+    padding: 0
+    background: $light-gray
+    main
+        width: 100%
+        height: 100%
+        padding: 2rem
+        display: grid
+        grid-template-rows: 375px 375px
+        grid-template-columns: 1fr 1fr 1fr 1fr
+        grid-template-areas: "card1 card1 card2 card5" "card3 card4 card4 card5"
+        grid-gap: 1rem
+        .card
+            display: flex
+            flex-direction: column
+
+        .card-1 
+            grid-area: card1
+        .card-2 
+            grid-area: card2
+        .card-3 
+            grid-area: card3
+        .card-4 
+            grid-area: card4
+        .card-5 
+            grid-area: card5
+
+    .attribution 
+        font-size: 16px 
+        text-align: center
+        a
+            color: $moderate-violet
+            text-decoration: none
+            transition: color 200ms ease-out
+            &:hover
+                color: darken($moderate-violet, 35%)
+            &:active
+                font-size: 15px
+                
+
+.card
+    background: blue
+    border-radius: 1rem
+    header
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        padding: 0 2rem
+        margin-top: 1rem
+        height: 56px
+        img
+            border-radius: 50%
+        .name-verified
+            margin-left: 1rem
+            h4
+                margin-bottom: .1rem
+                font-size: 1.1rem
+                color: $white
+            p   
+                margin-top: .1rem
+                color: $white
+                opacity: 50%
+                font-weight: 600
+    main
+        display: flex
+        flex-direction: column
+        padding: 0 2rem
+        color: $white
+        h2
+            font-size: 1.4rem
+            margin-bottom: 0
+        p
+            opacity: 70%
+            font-weight: 600
+
+.card-1
+    background: url(./images/bg-pattern-quotation.svg) no-repeat
+    background-position-x: 30vw
+    background-color: $moderate-violet
+    img
+        border: .15rem solid rgba(255, 255, 255, .5)
+
+.card-2
+    background: $very-dark-grayish-blue
+    img
+        border: .15rem solid rgba(255, 255, 255, .5)
+
+.card-3
+    background: $white
+    header
+        .name-verified
+            h4
+                color: $very-dark-grayish-blue
+            p
+                color: $very-dark-grayish-blue
+    main
+        color: $very-dark-grayish-blue
+    
+.card-4
+    background: $very-dark-blackish-blue
+    img
+        border: .15rem solid $moderate-violet
+
+.card-5
+    background: $white
+    header
+        .name-verified
+            h4
+                color: $very-dark-grayish-blue
+            p
+                color: $very-dark-grayish-blue
+    main
+        color: $very-dark-grayish-blue
+
+
+@media (max-width: 920px)
+    body
+        overflow-x: hidden
+        main
+            display: flex
+            flex-direction: column
+            align-items: center
+            margin: 1rem
+            .card
+                width: 375px
+
+        
+           
